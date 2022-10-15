@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonAlias;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.Instant;
-
 @Getter
 @Setter
 public class SubOrderResponse {
@@ -20,8 +18,8 @@ public class SubOrderResponse {
     private Double estimatedWaitingTime;
 
     @JsonAlias("created_time")
-    private Instant createdTime;
+    private Long createdTime;
 
     @JsonAlias("registered_time")
-    private Instant registeredTime;
+    private Long registeredTime;
 }
