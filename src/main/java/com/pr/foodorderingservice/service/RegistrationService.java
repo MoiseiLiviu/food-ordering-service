@@ -1,11 +1,10 @@
 package com.pr.foodorderingservice.service;
 
-import com.pr.foodorderingservice.model.RestaurantContainer;
 import com.pr.foodorderingservice.model.MenuResponse;
 import com.pr.foodorderingservice.model.Restaurant;
+import com.pr.foodorderingservice.model.RestaurantContainer;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 
 @Service
 public class RegistrationService {
@@ -17,7 +16,7 @@ public class RegistrationService {
     public MenuResponse getMenus() {
         MenuResponse menuResponse = new MenuResponse();
         menuResponse.setRestaurants(RestaurantContainer.restaurants.size());
-        menuResponse.setRestaurantData((List<Restaurant>) RestaurantContainer.restaurants.values());
+        menuResponse.setRestaurantData(RestaurantContainer.restaurants.values().stream().toList());
 
         return menuResponse;
     }

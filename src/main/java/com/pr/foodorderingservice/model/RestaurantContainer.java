@@ -1,6 +1,5 @@
 package com.pr.foodorderingservice.model;
 
-import com.pr.foodorderingservice.model.Restaurant;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
