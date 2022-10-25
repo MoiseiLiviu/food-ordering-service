@@ -9,6 +9,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -23,7 +24,7 @@ public class OrderingService {
             completableFutures.add(completableFuture);
         }
         List<SubOrderResponse> subOrderResponses = completableFutures.stream()
-                .map(CompletableFuture::join).toList();
+                .map(CompletableFuture::join).collect(Collectors.toList());
         Order order = new Order();
         order.setSubOrderResponses(subOrderResponses);
 

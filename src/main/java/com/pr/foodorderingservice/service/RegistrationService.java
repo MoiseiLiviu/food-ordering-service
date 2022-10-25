@@ -5,6 +5,8 @@ import com.pr.foodorderingservice.model.Restaurant;
 import com.pr.foodorderingservice.model.RestaurantContainer;
 import org.springframework.stereotype.Service;
 
+import java.util.stream.Collectors;
+
 
 @Service
 public class RegistrationService {
@@ -16,7 +18,7 @@ public class RegistrationService {
     public MenuResponse getMenus() {
         MenuResponse menuResponse = new MenuResponse();
         menuResponse.setRestaurants(RestaurantContainer.restaurants.size());
-        menuResponse.setRestaurantData(RestaurantContainer.restaurants.values().stream().toList());
+        menuResponse.setRestaurantData(RestaurantContainer.restaurants.values().stream().collect(Collectors.toList()));
 
         return menuResponse;
     }
